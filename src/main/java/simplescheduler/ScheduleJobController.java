@@ -4,8 +4,7 @@ import jakarta.annotation.PostConstruct;
 import org.quartz.JobDataMap;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.Random;
@@ -28,5 +27,10 @@ public class ScheduleJobController {
             scheduleJob.scheduleJob("job"+Math.random(), "job-group-scheduler",
                     "0 "+(21+i)+" 12 * * ? ", "initial-job", "my-trigger"+Math.random(), dataMap);
         }
+    }
+
+    @PostMapping("/schedule/{jon-name}/{cid}")
+    public void createScheduler(@PathVariable("jon-name") String jobName, @PathVariable("cid") int cid){
+
     }
 }
