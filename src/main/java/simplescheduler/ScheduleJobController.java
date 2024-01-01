@@ -31,6 +31,6 @@ public class ScheduleJobController {
 
     @PostMapping("/schedule/{jon-name}/{cid}")
     public void createScheduler(@PathVariable("jon-name") String jobName, @PathVariable("cid") int cid){
-
+        System.out.println("JOB-test");
     }
 }
